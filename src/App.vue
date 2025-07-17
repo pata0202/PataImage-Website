@@ -127,7 +127,7 @@ onMounted(() => {
 function createGsapFrom(elementId, trigger, triggerPosition = '65%') {
   gsap.from(`#${elementId}`, {
     duration: 0.5,
-    y: -100,
+    y: -50,
     opacity: 0,
     ease: "power2.out",
     scrollTrigger: {
@@ -192,21 +192,6 @@ function readReview(action) {
 
 <style scoped>
 @import './style.css';
-
-.scroll-wrapper {
-  /* overflow: hidden;
-  white-space: nowrap;
-  width: 100%; */
-}
-
-.scroll-content {
-  /* display: inline-block; */
-}
-
-.scroll-content img {
-  /* display: inline-block; */
-  /* margin-right: 100px; */
-}
 
 .底部圓角 {
   border-bottom-left-radius: 50px;
