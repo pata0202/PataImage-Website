@@ -10,8 +10,8 @@
           致力於打造獨一無二，<br class="md:hidden" />令人<span
             class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
-      <div class="mt-10 bg-gray-100 h-45 w-80 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
-        <video class="w-full h-full" autoplay loop muted playsinline>
+      <div class="mt-10 h-45 w-80 md:h-full md:w-full rounded-2xl md:rounded-4xl overflow-hidden shadow-md" :class="[videoLoaded ? '' : 'bg-gray-200']">
+        <video class="w-full h-full" autoplay loop muted playsinline @loadeddata="videoLoaded = true" :class="['transition-opacity duration-300', videoLoaded ? 'opacity-100' : 'opacity-0']">
           <source :src="videoPath" type="video/mp4" />
           瀏覽器不支援影片播放
         </video>
@@ -151,18 +151,20 @@ onMounted(() => {
   const sectionsDelay = 0.3;
 
   createGsapFrom('index', 'index');
-  createGsapFrom('about_content', 'about');
-  createGsapFrom('works_content', 'index');
+  createGsapFrom('about_content', 'index');
+  createGsapFrom('works_content', 'works');
   createGsapFrom('feedback_content', 'feedback');
   createGsapFrom('contact_content', 'contact', '90%');
 
 
 });
 
+const videoLoaded = ref(false);
+
 function createGsapFrom(elementId, trigger, triggerPosition = '65%') {
   gsap.from(`#${elementId}`, {
     duration: 0.5,
-    y: -50,
+    y: 30,
     opacity: 0,
     ease: "power2.out",
     scrollTrigger: {
