@@ -21,29 +21,33 @@
           </span>
         </a>
       </div>
-      <div class="overflow-x-scroll">
-        <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
-          <img class="bg-gray-200 ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-          <img class="bg-gray-200 md:ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+      <div id="works_content">
+        <div class="overflow-x-scroll">
+          <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
+            <img class="bg-gray-200 ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+            <img class="bg-gray-200 md:ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+          </div>
         </div>
       </div>
     </section>
     <section id="services" class="區塊 px-10 bg-white">
       <div class="text-4xl mb-3 font-medium">How Service Works</div>
-      <div class="text-lg mb-10 text-gray-500">those who roamed by. He felt at peace in the moment, hoping it would
-        last, but
-        knowing the reprieve would soon come to an end. He closed his eyes,</div>
-      <div class="bg-red-100 h-70 w-full">架構圖</div>
+      <div id="services_content">
+        <div class="text-lg mb-10 text-gray-500">those who roamed by. He felt at peace in the moment, hoping it would
+          last, but
+          knowing the reprieve would soon come to an end. He closed his eyes,</div>
+        <div class="bg-red-100 h-70 w-full">架構圖</div>
+      </div>
     </section>
     <section id="feedback" class="區塊">
       <div class="px-10 text-4xl mb-3 font-medium">屢獲肯定</div>
@@ -58,35 +62,38 @@
           </span>
         </div>
       </div>
-      <div class="flex flex-col bg-white pl-20 pr-20 pt-15 pb-20">
-        <review-box :name="currentReview.name" :title="currentReview.title" :review="currentReview.review"
-          :image="currentReview.image"></review-box>
+      <div id="feedback_content">
+        <div class="flex flex-col bg-white pl-20 pr-20 pt-15 pb-20">
+          <review-box :name="currentReview.name" :title="currentReview.title" :review="currentReview.review"
+            :image="currentReview.image"></review-box>
+        </div>
       </div>
     </section>
     <section id="contact" class="bg-white pb-20 px-10">
       <div class="text-4xl mb-15 font-medium">立即展開聯絡！</div>
+      <div id="contact_content">
+        <div class="flex gap-10 justify-center items-center">
+          <a class="社群按鈕 h-20 w-20 bg-gray-100 rounded-full flex justify-center items-center"
+            href="https://www.instagram.com/pata.image/" target="_blank">
+            <img src="./assets/ig.svg" class="w-10 h-10" />
+          </a>
+          <a class="社群按鈕 h-20 w-20 bg-gray-100 rounded-full flex justify-center items-center"
+            href="mailto:pata@pataimage.com">
+            <img src="./assets/mail.svg" class="w-10 h-10" />
+          </a>
+        </div>
 
-      <div class="flex gap-10 justify-center items-center">
-        <a class="社群按鈕 h-20 w-20 bg-gray-100 rounded-full flex justify-center items-center"
-          href="https://www.instagram.com/pata.image/" target="_blank">
-          <img src="./assets/ig.svg" class="w-10 h-10" />
-        </a>
-        <a class="社群按鈕 h-20 w-20 bgz-gray-100 rounded-full flex justify-center items-center"
-          href="mailto:pata@pataimage.com">
-          <img src="./assets/mail.svg" class="w-10 h-10" />
-        </a>
-      </div>
-
-      <div class="w-full flex justify-center items-center pt-20 pb-10 gap-5">
-        <div class="w-20 h-1 bg-gray-200"></div>
-        <div class="text-xl">或是填寫需求表單</div>
-        <div class="w-20 h-1 bg-gray-200"></div>
-      </div>
-      <div class="flex justify-center">
-        <a class="社群按鈕 text-white mouse-pointer rounded-full bg-amber-500 w-70 h-15 flex text-2xl font-bold justify-center items-center"
-          href="https://pataimage.notion.site/2327d8c9060180cda86ae583d48666a6?pvs=105" target="_blank">
-          前往填寫
-        </a>
+        <div class="w-full flex justify-center items-center pt-20 pb-10 gap-5">
+          <div class="grow h-1 bg-gray-200 ml-10"></div>
+          <div class="text-xl">或是填寫需求表單</div>
+          <div class="grow h-1 bg-gray-200 mr-10"></div>
+        </div>
+        <div class="flex justify-center">
+          <a class="社群按鈕 text-white mouse-pointer rounded-full bg-amber-500 w-70 h-15 flex text-2xl font-bold justify-center items-center"
+            href="https://pataimage.notion.site/2327d8c9060180cda86ae583d48666a6?pvs=105" target="_blank">
+            前往填寫
+          </a>
+        </div>
       </div>
     </section>
     <section id="footer" class="bg-gray-100 pb-20">
@@ -101,21 +108,35 @@ import ReviewBox from './components/ReviewBox.vue'
 import * as types from './types'
 import * as tools from './tools'
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   const animationDuration = 0.5;
   const sectionsDelay = 0.3;
-  // gsap.registerPlugin(Draggable);
-  gsap.from("#top", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out" });
-  gsap.from("#index", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay });
-  gsap.from("#works", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 2 });
-  gsap.from("#services", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 3 });
-  gsap.from("#feedback", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 4 });
-  gsap.from("#contact", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 5 });
+
+  createGsapFrom('index', 'index');
+  createGsapFrom('works_content', 'index');
+  createGsapFrom('services_content', 'services');
+  createGsapFrom('feedback_content', 'feedback');
+  createGsapFrom('contact_content', 'contact', '90%');
+
+
 });
 
-// 進入檢視區域時才觸發動畫
-
+function createGsapFrom(elementId, trigger, triggerPosition = '65%') {
+  gsap.from(`#${elementId}`, {
+    duration: 0.5,
+    y: -100,
+    opacity: 0,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: `#${trigger}`,
+      start: `top ${triggerPosition}`,
+      once: true
+    }
+  });
+}
 
 const reviews = ref([
   {
