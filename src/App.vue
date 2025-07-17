@@ -7,7 +7,7 @@
         <div>拍打影像</div>
       </div>
       <div class="text-xl md:text-2xl text-gray-500 text-center"><span>
-          致力於打造獨一無二，令人<span
+          致力於打造獨一無二，<br class="md:hidden"/>令人<span
             class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
       <div class="mt-10 bg-gray-100 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
