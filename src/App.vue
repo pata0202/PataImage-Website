@@ -2,7 +2,7 @@
   <main>
     <!-- <section id="top" class="h-20"></section> -->
     <section id="index" class="pt-20 flex flex-col justify-start items-center px-section md:px-sectionlg h-auto">
-      <div class="text-7xl md:text-8xl mb-10 font-medium text-center md:flex gap-5">
+      <div class="text-7xl lg:text-8xl mb-10 font-medium text-center md:flex gap-5">
         <div class="pb-3 md:pb-0">Pata Image</div>
         <div>拍打影像</div>
       </div>
@@ -10,7 +10,7 @@
           致力於打造獨一無二，<br class="md:hidden"/>令人<span
             class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
-      <div class="mt-10 bg-gray-100 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
+      <div class="mt-10 bg-gray-100 h-45 w-80 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
         <video class="w-full h-full" autoplay loop muted playsinline>
           <source :src="videoPath" type="video/mp4" />
           瀏覽器不支援影片播放
