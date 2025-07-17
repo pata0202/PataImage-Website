@@ -3,7 +3,7 @@
     <!-- <section id="top" class="h-20"></section> -->
     <section id="index" class="pt-20 flex flex-col justify-start items-center px-section md:px-sectionlg h-auto">
       <div class="text-7xl lg:text-8xl mb-10 font-medium text-center md:flex gap-5">
-        <div class="pb-3 md:pb-0">Pata Image</div>
+        <div class="pb-3 md:pb-0">Pata&nbsp;Image</div>
         <div>拍打影像</div>
       </div>
       <div class="text-xl md:text-2xl text-gray-500 text-center"><span>
@@ -91,7 +91,7 @@
         </div>
       </div>
       <div id="feedback_content">
-        <div class="flex flex-col bg-white pl-20 xl:pl-80 pr-20 xl:pr-80 pt-10 pb-20 md:text-2xl">
+        <div class="h-80 flex flex-col bg-white pl-20 xl:pl-80 pr-20 xl:pr-80 pt-10 pb-20 md:text-2xl">
           <review-box :name="currentReview.name" :title="currentReview.title" :review="currentReview.review"
             :image="currentReview.image"></review-box>
         </div>
