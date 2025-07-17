@@ -10,8 +10,9 @@
     </section>
     <section id="works" class="區塊">
       <div class="px-10 text-4xl mb-3 font-medium">看看我的創作</div>
-      <div class="px-10 text-xl mb-10">
-        <a class="transition duration-150 ease-in-out flex items-center gap-1 w-35 hover:border-b-amber-500 border-b-4 border-transparent" href="https://google.com" target="_blank">
+      <div class="px-10 text-xl mb-5">
+        <a class="transition duration-150 ease-in-out flex items-center gap-1 w-35 hover:border-b-amber-500 border-b-4 border-transparent"
+          href="https://google.com" target="_blank">
           <span>
             作品列表
           </span>
@@ -20,7 +21,22 @@
           </span>
         </a>
       </div>
-      <div class="bg-red-100 h-70 w-full">輪播</div>
+      <div class="overflow-x-scroll">
+        <div class="px-5 py-5 grid grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
+          <img src="https://picsum.photos/id/1015/400/300" />
+          <img src="https://picsum.photos/id/1016/400/300" />
+          <img src="https://picsum.photos/id/1018/400/300" />
+          <img src="https://picsum.photos/id/1020/400/300" />
+          <img src="https://picsum.photos/id/1015/400/300" />
+          <img src="https://picsum.photos/id/1016/400/300" />
+          <img src="https://picsum.photos/id/1018/400/300" />
+          <img src="https://picsum.photos/id/1020/400/300" />
+          <img src="https://picsum.photos/id/1015/400/300" />
+          <img src="https://picsum.photos/id/1016/400/300" />
+          <img src="https://picsum.photos/id/1018/400/300" />
+          <img src="https://picsum.photos/id/1020/400/300" />
+        </div>
+      </div>
     </section>
     <section id="services" class="區塊 px-10 bg-white">
       <div class="text-4xl mb-3 font-medium">How Service Works</div>
@@ -84,6 +100,21 @@ import { ref, onMounted } from 'vue'
 import ReviewBox from './components/ReviewBox.vue'
 import * as types from './types'
 import * as tools from './tools'
+import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
+gsap.registerPlugin(Draggable);
+
+Draggable.create("#drag", {
+  type: "y",
+  bounds: document.getElementById("container"),
+  inertia: true,
+  onClick: function () {
+    console.log("clicked");
+  },
+  onDragEnd: function () {
+    console.log("drag ended");
+  },
+});
 
 const reviews = ref([
   {
@@ -139,6 +170,21 @@ function readReview(action) {
 
 <style scoped>
 @import './style.css';
+
+.scroll-wrapper {
+  /* overflow: hidden;
+  white-space: nowrap;
+  width: 100%; */
+}
+
+.scroll-content {
+  /* display: inline-block; */
+}
+
+.scroll-content img {
+  /* display: inline-block; */
+  /* margin-right: 100px; */
+}
 
 .底部圓角 {
   border-bottom-left-radius: 50px;
