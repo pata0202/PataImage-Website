@@ -1,29 +1,45 @@
 <template>
   <main>
     <!-- <section id="top" class="h-20"></section> -->
-    <section id="index" class="py-20 flex flex-col justify-start items-center px-section md:px-sectionlg">
-      <div class="text-7xl mb-10 font-medium">Title-Text</div>
-      <div class="text-xl text-gray-500 text-center"><span>
-          Sitting in the sun,away from everyone who had done him harm in the past
+    <section id="index" class="pt-20 flex flex-col justify-start items-center px-section md:px-sectionlg h-auto">
+      <div class="text-7xl md:text-8xl mb-10 font-medium text-center md:flex gap-5">
+        <div class="pb-3 md:pb-0">Pata Image</div>
+        <div>拍打影像</div>
+      </div>
+      <div class="text-xl md:text-2xl text-gray-500 text-center"><span>
+          致力於打造獨一無二，令人<span
+            class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
-      <div class="mt-10 bg-gray-100 h-70 w-full">Video</div>
+      <div class="mt-10 bg-gray-100 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
+        <video class="w-full h-full" autoplay loop muted playsinline>
+          <source :src="videoPath" type="video/mp4" />
+          瀏覽器不支援影片播放
+        </video>
+      </div>
     </section>
 
-    <section id="about" class="區塊 px-section md:px-sectionlg bg-white">
+    <section id="about" class="區塊 px-section md:px-sectionlg bg-white h-auto">
       <div class="mb-3 段落標題">關於我</div>
-      <div id="about_content">
-        <div class="text-md mb-5 text-gray-500">
-          <p class="pb-1">嗨，我是Pata。</p>
-          <p class="pb-1">我透過錄影與拍照，凝結每個動人瞬間，捕捉屬於現場的溫度與故事。</p>
-          <p class="pb-1">不論是一場演出、一個儀式，或一段人與人之間的交流，我相信影像可以讓時間暫停，讓回憶延續。</p>
+      <div id="about_content" class="">
+        <div class="text-md mb-10 text-gray-500 md:pl-1">
+          <p class="pb-5">嗨，我是&nbsp;Pata。</p>
+          <p class="pb-5">我透過錄影與拍照，凝結每個動人瞬間，<br/>捕捉屬於現場的溫度與故事。</p>
+          <p class="">不論是一場演出、一個儀式，<br/>或一段人與人之間的交流，<br/>我相信影像可以讓時間暫停，讓回憶延續。</p>
         </div>
-        <div class="bg-red-100 h-70 w-full">關於我</div>
+        <div class="h-max w-full flex justify-evenly items-center gap-10 md:pt-10">
+          <div class="">
+            <img class="max-h-100 關於我圖片" :src="pataImage" alt="關於我圖片">
+          </div>
+          <div class="">
+            <img class="max-h-100 關於我圖片" :src="pataImage2" alt="關於我圖片">
+          </div>
+        </div>
       </div>
     </section>
 
 
     <section id="works" class="區塊">
-      <div class="px-section md:px-sectionlg mb-3 段落標題">近期作品</div>
+      <div class="px-section md:px-sectionlg mb-3 段落標題">作品錦集</div>
       <div class="px-section md:px-sectionlg text-xl mb-5">
         <a class="transition duration-150 ease-in-out flex items-center gap-1 w-50 hover:border-b-amber-500 border-b-4 border-transparent"
           href="https://google.com" target="_blank">
@@ -37,10 +53,10 @@
       </div>
       <div id="works_content">
         <div class="overflow-x-scroll">
-          <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
-            <div class="bg-gray-200 h-[300px] w-[400px]" :class="[data.loaded ? '' : 'animate-pulse']"
-              v-for="data in works" :key="data.seq">
-              <img class="bg-gray-200 h-[300px] w-[400px]"
+          <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 md:gap-x-8 w-max">
+            <div class="flex justify-center items-center h-[200px] w-[300px] md:h-80 md:w-auto"
+              :class="[data.loaded ? '' : 'bg-gray-200 animate-pulse']" v-for="data in works" :key="data.seq">
+              <img class="bg-white h-[200px] w-[300px] md:h-80 md:w-auto object-contain p-5"
                 :class="['transition-opacity duration-700', data.loaded ? 'opacity-100' : 'opacity-0']"
                 :src="data.image" @load="works[data.seq].loaded = true" />
             </div>
@@ -48,15 +64,6 @@
         </div>
       </div>
     </section>
-    <!-- <section id="services" class="區塊 px-section bg-white">
-      <div class="mb-3 段落標題">How Service Works</div>
-      <div id="services_content">
-        <div class="text-lg mb-10 text-gray-500">those who roamed by. He felt at peace in the moment, hoping it would
-          last, but
-          knowing the reprieve would soon come to an end. He closed his eyes,</div>
-        <div class="bg-red-100 h-70 w-full">架構圖</div>
-      </div>
-    </section> -->
     <section id="feedback" class="區塊">
       <div class="px-section md:px-sectionlg mb-3 段落標題">大家都說讚</div>
       <div class="flex justify-end pr-15 pt-10">
@@ -71,7 +78,7 @@
         </div>
       </div>
       <div id="feedback_content">
-        <div class="flex flex-col bg-white pl-20 xl:pl-80 pr-20 pt-15 pb-20 md:text-2xl">
+        <div class="flex flex-col bg-white pl-20 xl:pl-80 pr-20 xl:pr-80 pt-10 pb-20 md:text-2xl">
           <review-box :name="currentReview.name" :title="currentReview.title" :review="currentReview.review"
             :image="currentReview.image"></review-box>
         </div>
@@ -156,10 +163,10 @@ function createGsapFrom(elementId, trigger, triggerPosition = '65%') {
 const reviews = ref([
   {
     seq: 1,
-    name: '名字字',
-    title: '職稱職稱職稱',
-    review: 'those who roamed by. He felt at peace in the moment, hoping it would last, but',
-    image: 'https://via.placeholder.com/150'
+    name: '詹喆麟',
+    title: '創意公司 赤狐 創辦人',
+    review: 'Pata 始終以他的細心、大方和博愛、客觀與理性，為我們提供著優秀品質、高度水準的作品與令人驚艷的影像創作。沛辰積極向上的精神為團隊帶來了顯著的激勵與正向影響；他的卓越技術更為每項經手的專案賦予令人驚艷的成果。',
+    image: 'https://chelinchan.com/assets/profile-DnhaKpBs.jpg'
   }, {
     seq: 2,
     name: '名字字2',
@@ -176,22 +183,46 @@ const reviews = ref([
   }
 ])
 
+
+const pataImage = new URL('./assets/pata.webp', import.meta.url).href;
+const pataImage2 = new URL('./assets/pata2.webp', import.meta.url).href
+const videoPath = new URL('./assets/hero_vid.mp4', import.meta.url).href;
+
 const works = ref([
   {
     seq: 0,
     title: '作品名稱',
-    image: 'https://picsum.photos/id/1015/400/300',
+    image: new URL('./assets/works/karcher.webp', import.meta.url).href,
     loaded: false,
-  }, {
+  },
+  {
     seq: 1,
-    title: '作品名稱2',
-    image: 'https://picsum.photos/id/1016/400/300',
+    title: '作品名稱3',
+    image: new URL('./assets/works/wedding1.webp', import.meta.url).href,
     loaded: false,
   },
   {
     seq: 2,
-    title: '作品名稱3',
-    image: 'https://picsum.photos/id/1018/400/300',
+    title: '作品名稱4',
+    image: new URL('./assets/works/nutrition.webp', import.meta.url).href,
+    loaded: false,
+  },
+  {
+    seq: 3,
+    title: '作品名稱5',
+    image: new URL('./assets/works/active1.webp', import.meta.url).href,
+    loaded: false,
+  },
+  {
+    seq: 4,
+    title: '作品名稱6',
+    image: new URL('./assets/works/active2.webp', import.meta.url).href,
+    loaded: false,
+  },
+  {
+    seq: 5,
+    title: '作品名稱7',
+    image: new URL('./assets/works/portrait.webp', import.meta.url).href,
     loaded: false,
   }
 ])
@@ -230,7 +261,7 @@ function readReview(action) {
 
 
 .段落標題 {
-  @apply text-3xl md:text-4xl md:pb-3 md:pt-5 font-medium;
+  @apply text-3xl md:text-7xl md:pb-3 md:pt-5 font-medium;
 }
 
 .底部圓角 {
@@ -240,10 +271,14 @@ function readReview(action) {
 }
 
 .區塊 {
-  @apply py-15;
+  @apply py-15 md:pt-20;
 }
 
 .社群按鈕 {
   @apply hover:shadow-xl ease-in-out duration-150 border-solid hover:border-3 border-amber-500;
+}
+
+.關於我圖片 {
+  @apply object-contain shadow-[10px_10px_0px_0px] shadow-amber-500 hover:shadow-amber-300 duration-150 hover:-translate-y-3 hover:-translate-x-3;
 }
 </style>
