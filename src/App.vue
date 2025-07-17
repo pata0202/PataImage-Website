@@ -7,10 +7,10 @@
         <div>拍打影像</div>
       </div>
       <div class="text-xl md:text-2xl text-gray-500 text-center"><span>
-          致力於打造獨一無二，<br class="md:hidden"/>令人<span
+          致力於打造獨一無二，<br class="md:hidden" />令人<span
             class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
-      <div class="mt-10 bg-gray-100 h-45 w-80 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
+      <div class="mt-10 bg-gray-100 animate-pulse h-45 w-80 md:h-auto md:w-auto rounded-2xl md:rounded-4xl overflow-hidden shadow-md">
         <video class="w-full h-full" autoplay loop muted playsinline>
           <source :src="videoPath" type="video/mp4" />
           瀏覽器不支援影片播放
@@ -21,10 +21,12 @@
     <section id="about" class="區塊 px-section md:px-sectionlg bg-white h-auto">
       <div class="mb-3 段落標題">關於我</div>
       <div id="about_content" class="">
-        <div class="text-md mb-10 text-gray-500 md:pl-1">
-          <p class="pb-5">嗨，我是&nbsp;Pata。</p>
-          <p class="pb-5">我透過錄影與拍照，凝結每個動人瞬間，<br/>捕捉屬於現場的溫度與故事。</p>
-          <p class="">不論是一場演出、一個儀式，<br/>或一段人與人之間的交流，<br/>我相信影像可以讓時間暫停，讓回憶延續。</p>
+        <div class="flex md:justify-end md:pr-50">
+          <div class="text-md mb-10 text-gray-500 md:pl-1">
+            <p class="pb-5">嗨，我是&nbsp;Pata。</p>
+            <p class="pb-5">我透過錄影與拍照，凝結每個動人瞬間，<br class="md:hidden" />捕捉屬於現場的溫度與故事。</p>
+            <p class="">不論是一場演出、一個儀式，<br class="md:hidden" />或一段人與人之間的交流，<br class="md:hidden" />我相信影像可以讓時間暫停，讓回憶延續。</p>
+          </div>
         </div>
         <div class="h-max w-full flex justify-evenly items-center gap-10 md:pt-10">
           <div class="">
@@ -40,16 +42,27 @@
 
     <section id="works" class="區塊">
       <div class="px-section md:px-sectionlg mb-3 段落標題">作品錦集</div>
-      <div class="px-section md:px-sectionlg text-xl mb-5">
-        <a class="transition duration-150 ease-in-out flex items-center gap-1 w-50 hover:border-b-amber-500 border-b-4 border-transparent"
-          href="https://google.com" target="_blank">
-          <span>
-            看更多
-          </span>
-          <span class="material-symbols-outlined">
-            arrow_right_alt
-          </span>
-        </a>
+      <div class="px-section md:px-sectionlg text-xl mb-5 ">
+        <div class="flex gap-10">
+          <a class="transition duration-150 ease-in-out flex items-center gap-1 w-auto hover:border-b-amber-500 border-b-4 border-transparent"
+            href="https://google.com" target="_blank">
+            <span>
+              更多照片
+            </span>
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+            </span>
+          </a>
+          <a class="transition duration-150 ease-in-out flex items-center gap-1 w-auto hover:border-b-amber-500 border-b-4 border-transparent"
+            href="https://www.youtube.com/@pataimage" target="_blank">
+            <span>
+              更多影片
+            </span>
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+            </span>
+          </a>
+        </div>
       </div>
       <div id="works_content">
         <div class="overflow-x-scroll">
