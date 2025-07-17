@@ -65,7 +65,7 @@
         </div>
       </div>
       <div id="works_content">
-        <div class="overflow-x-scroll">
+        <div class="overflow-x-scroll md:flex md:justify-center">
           <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 md:gap-x-8 w-max">
             <div class="flex justify-center items-center h-[200px] w-[300px] md:h-80 md:w-auto"
               :class="[data.loaded ? '' : 'bg-gray-200 animate-pulse']" v-for="data in works" :key="data.seq">
