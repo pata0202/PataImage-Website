@@ -16,3 +16,7 @@
     --spacing-section: calc(var(--spacing) * 6);
     --spacing-sectionlg: calc(var(--spacing) * 15);
 }
+
+body {
+    font-family: "Inter", "Noto Sans TC", sans-serif;
+}
