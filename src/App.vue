@@ -1,20 +1,34 @@
 <template>
   <main>
-    <section id="top" class="區塊 h-10"></section>
-    <section id="index" class="pb-15 bg-white flex flex-col justify-start px-10 items-center">
-      <div class="text-7xl mb-10 font-medium ">Title-Text</div>
+    <!-- <section id="top" class="h-20"></section> -->
+    <section id="index" class="py-20 flex flex-col justify-start items-center px-section md:px-sectionlg">
+      <div class="text-7xl mb-10 font-medium">Title-Text</div>
       <div class="text-xl text-gray-500 text-center"><span>
           Sitting in the sun,away from everyone who had done him harm in the past
         </span></div>
       <div class="mt-10 bg-gray-100 h-70 w-full">Video</div>
     </section>
+
+    <section id="about" class="區塊 px-section md:px-sectionlg bg-white">
+      <div class="mb-3 段落標題">關於我</div>
+      <div id="about_content">
+        <div class="text-md mb-5 text-gray-500">
+          <p class="pb-1">嗨，我是Pata。</p>
+          <p class="pb-1">我透過錄影與拍照，凝結每個動人瞬間，捕捉屬於現場的溫度與故事。</p>
+          <p class="pb-1">不論是一場演出、一個儀式，或一段人與人之間的交流，我相信影像可以讓時間暫停，讓回憶延續。</p>
+        </div>
+        <div class="bg-red-100 h-70 w-full">關於我</div>
+      </div>
+    </section>
+
+
     <section id="works" class="區塊">
-      <div class="px-10 text-4xl mb-3 font-medium">看看我的創作</div>
-      <div class="px-10 text-xl mb-5">
-        <a class="transition duration-150 ease-in-out flex items-center gap-1 w-35 hover:border-b-amber-500 border-b-4 border-transparent"
+      <div class="px-section md:px-sectionlg mb-3 段落標題">近期作品</div>
+      <div class="px-section md:px-sectionlg text-xl mb-5">
+        <a class="transition duration-150 ease-in-out flex items-center gap-1 w-50 hover:border-b-amber-500 border-b-4 border-transparent"
           href="https://google.com" target="_blank">
           <span>
-            作品列表
+            看更多
           </span>
           <span class="material-symbols-outlined">
             arrow_right_alt
@@ -24,33 +38,27 @@
       <div id="works_content">
         <div class="overflow-x-scroll">
           <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
-            <img class="bg-gray-200 ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-            <img class="bg-gray-200 md:ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
-            <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+            <div class="bg-gray-200 h-[300px] w-[400px]" :class="[data.loaded ? '' : 'animate-pulse']"
+              v-for="data in works" :key="data.seq">
+              <img class="bg-gray-200 h-[300px] w-[400px]"
+                :class="['transition-opacity duration-700', data.loaded ? 'opacity-100' : 'opacity-0']"
+                :src="data.image" @load="works[data.seq].loaded = true" />
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="services" class="區塊 px-10 bg-white">
-      <div class="text-4xl mb-3 font-medium">How Service Works</div>
+    <!-- <section id="services" class="區塊 px-section bg-white">
+      <div class="mb-3 段落標題">How Service Works</div>
       <div id="services_content">
         <div class="text-lg mb-10 text-gray-500">those who roamed by. He felt at peace in the moment, hoping it would
           last, but
           knowing the reprieve would soon come to an end. He closed his eyes,</div>
         <div class="bg-red-100 h-70 w-full">架構圖</div>
       </div>
-    </section>
+    </section> -->
     <section id="feedback" class="區塊">
-      <div class="px-10 text-4xl mb-3 font-medium">屢獲肯定</div>
+      <div class="px-section md:px-sectionlg mb-3 段落標題">大家都說讚</div>
       <div class="flex justify-end pr-15 pt-10">
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined cursor-pointer" @click="readReview(types.ReviewAction.previous)">
@@ -63,14 +71,18 @@
         </div>
       </div>
       <div id="feedback_content">
-        <div class="flex flex-col bg-white pl-20 pr-20 pt-15 pb-20">
+        <div class="flex flex-col bg-white pl-20 xl:pl-80 pr-20 pt-15 pb-20 md:text-2xl">
           <review-box :name="currentReview.name" :title="currentReview.title" :review="currentReview.review"
             :image="currentReview.image"></review-box>
         </div>
       </div>
     </section>
-    <section id="contact" class="bg-white pb-20 px-10">
-      <div class="text-4xl mb-15 font-medium">立即展開聯絡！</div>
+    <section id="contact" class="bg-white pb-20 px-section md:px-sectionlg">
+      <div class="段落標題">一起聊聊吧！</div>
+      <div class="text-md mt-3 text-gray-500 mb-15">
+        <p>有任何合作的想法，歡迎隨時聯絡我</p>
+        <p>單純想交個朋友也非常歡迎。</p>
+      </div>
       <div id="contact_content">
         <div class="flex gap-10 justify-center items-center">
           <a class="社群按鈕 h-20 w-20 bg-gray-100 rounded-full flex justify-center items-center"
@@ -98,7 +110,10 @@
     </section>
     <section id="footer" class="bg-gray-100 pb-20">
       <div class="h-10 mb-10 bg-white 底部圓角"></div>
-      <div class="text-center text-gray-500">© 2025 Pata Image.</div>
+      <div class="text-center text-gray-500">
+        <p>© 2025 Pata Image</p>
+        <p class="text-sm">網站開發：我自己寫的</p>
+      </div>
     </section>
   </main>
 </template>
@@ -116,8 +131,8 @@ onMounted(() => {
   const sectionsDelay = 0.3;
 
   createGsapFrom('index', 'index');
+  createGsapFrom('about_content', 'about');
   createGsapFrom('works_content', 'index');
-  createGsapFrom('services_content', 'services');
   createGsapFrom('feedback_content', 'feedback');
   createGsapFrom('contact_content', 'contact', '90%');
 
@@ -161,6 +176,26 @@ const reviews = ref([
   }
 ])
 
+const works = ref([
+  {
+    seq: 0,
+    title: '作品名稱',
+    image: 'https://picsum.photos/id/1015/400/300',
+    loaded: false,
+  }, {
+    seq: 1,
+    title: '作品名稱2',
+    image: 'https://picsum.photos/id/1016/400/300',
+    loaded: false,
+  },
+  {
+    seq: 2,
+    title: '作品名稱3',
+    image: 'https://picsum.photos/id/1018/400/300',
+    loaded: false,
+  }
+])
+
 
 
 const currentReview = ref(tools.deepClone(reviews.value[0]));
@@ -192,6 +227,11 @@ function readReview(action) {
 
 <style scoped>
 @import './style.css';
+
+
+.段落標題 {
+  @apply text-3xl md:text-4xl md:pb-3 md:pt-5 font-medium;
+}
 
 .底部圓角 {
   border-bottom-left-radius: 50px;

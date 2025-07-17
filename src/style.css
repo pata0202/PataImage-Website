@@ -12,4 +12,7 @@
             transform: translateY(0);
         }
     }
+
+    --spacing-section: calc(var(--spacing) * 6);
+    --spacing-sectionlg: calc(var(--spacing) * 15);
 }
