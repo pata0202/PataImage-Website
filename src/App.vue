@@ -2,8 +2,8 @@
   <main>
     <section id="top" class="區塊 h-10"></section>
     <section id="index" class="pb-15 bg-white flex flex-col justify-start px-10 items-center">
-      <div class="animate-fadeUp text-7xl mb-10 font-medium ">Title-Text</div>
-      <div class="animate-fadeUp text-xl text-gray-500 text-center" style="animation-delay: 50ms;"><span>
+      <div class="text-7xl mb-10 font-medium ">Title-Text</div>
+      <div class="text-xl text-gray-500 text-center"><span>
           Sitting in the sun,away from everyone who had done him harm in the past
         </span></div>
       <div class="mt-10 bg-gray-100 h-70 w-full">Video</div>
@@ -22,19 +22,19 @@
         </a>
       </div>
       <div class="overflow-x-scroll">
-        <div class="px-5 py-5 grid grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
-          <img src="https://picsum.photos/id/1015/400/300" />
-          <img src="https://picsum.photos/id/1016/400/300" />
-          <img src="https://picsum.photos/id/1018/400/300" />
-          <img src="https://picsum.photos/id/1020/400/300" />
-          <img src="https://picsum.photos/id/1015/400/300" />
-          <img src="https://picsum.photos/id/1016/400/300" />
-          <img src="https://picsum.photos/id/1018/400/300" />
-          <img src="https://picsum.photos/id/1020/400/300" />
-          <img src="https://picsum.photos/id/1015/400/300" />
-          <img src="https://picsum.photos/id/1016/400/300" />
-          <img src="https://picsum.photos/id/1018/400/300" />
-          <img src="https://picsum.photos/id/1020/400/300" />
+        <div class="grid grid-rows-1 md:grid-rows-2 auto-rows-max grid-flow-col gap-5 w-max">
+          <img class="bg-gray-200 ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+          <img class="bg-gray-200 md:ml-10 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1015/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1016/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1018/400/300" />
+          <img class="bg-gray-200 h-[300px] w-[400px]" src="https://picsum.photos/id/1020/400/300" />
         </div>
       </div>
     </section>
@@ -71,7 +71,7 @@
           href="https://www.instagram.com/pata.image/" target="_blank">
           <img src="./assets/ig.svg" class="w-10 h-10" />
         </a>
-        <a class="社群按鈕 h-20 w-20 bg-gray-100 rounded-full flex justify-center items-center"
+        <a class="社群按鈕 h-20 w-20 bgz-gray-100 rounded-full flex justify-center items-center"
           href="mailto:pata@pataimage.com">
           <img src="./assets/mail.svg" class="w-10 h-10" />
         </a>
@@ -101,20 +101,21 @@ import ReviewBox from './components/ReviewBox.vue'
 import * as types from './types'
 import * as tools from './tools'
 import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
-gsap.registerPlugin(Draggable);
 
-Draggable.create("#drag", {
-  type: "y",
-  bounds: document.getElementById("container"),
-  inertia: true,
-  onClick: function () {
-    console.log("clicked");
-  },
-  onDragEnd: function () {
-    console.log("drag ended");
-  },
+onMounted(() => {
+  const animationDuration = 0.5;
+  const sectionsDelay = 0.3;
+  // gsap.registerPlugin(Draggable);
+  gsap.from("#top", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out" });
+  gsap.from("#index", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay });
+  gsap.from("#works", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 2 });
+  gsap.from("#services", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 3 });
+  gsap.from("#feedback", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 4 });
+  gsap.from("#contact", { duration: animationDuration, y: -100, opacity: 0, ease: "power2.out", delay: sectionsDelay * 5 });
 });
+
+// 進入檢視區域時才觸發動畫
+
 
 const reviews = ref([
   {
