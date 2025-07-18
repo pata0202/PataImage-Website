@@ -10,8 +10,10 @@
           致力於打造獨一無二，<br class="md:hidden" />令人<span
             class="font-bold bg-linear-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">心馳神往</span>的影像體驗
         </span></div>
-      <div class="mt-10 h-45 w-80 md:h-full md:w-full rounded-2xl md:rounded-4xl overflow-hidden shadow-md" :class="[videoLoaded ? '' : 'bg-gray-200']">
-        <video class="w-full h-full" autoplay loop muted playsinline @loadeddata="videoLoaded = true" :class="['transition-opacity duration-300', videoLoaded ? 'opacity-100' : 'opacity-0']">
+      <div class="mt-10 h-45 w-80 md:h-full md:w-full rounded-2xl md:rounded-4xl overflow-hidden shadow-md"
+        :class="[videoLoaded ? '' : 'bg-gray-200']">
+        <video class="w-full h-full" autoplay loop muted playsinline @loadeddata="videoLoaded = true"
+          :class="['transition-opacity duration-300', videoLoaded ? 'opacity-100' : 'opacity-0']">
           <source :src="videoPath" type="video/mp4" />
           瀏覽器不支援影片播放
         </video>
@@ -184,17 +186,17 @@ const reviews = ref([
     image: 'https://chelinchan.com/assets/profile-DnhaKpBs.jpg'
   }, {
     seq: 2,
-    name: '名字字2',
-    title: '職稱職稱職稱2',
-    review: 'those who roamed by. He felt at peace in the moment, hoping it would last, but',
-    image: 'https://via.placeholder.com/150'
+    name: '少年大叔',
+    title: '',
+    review: '可靠與用心的動態夥伴，畫面中情緒的掌握、光線與構圖的細膩，將品牌透過作品的疊加，展現出品牌的價值。',
+    image: new URL('./assets/reviews/alex.webp', import.meta.url).href
   },
   {
     seq: 3,
-    name: '名字字3',
-    title: '職稱職稱職稱3',
-    review: 'those who roamed by. He felt at peace in the moment, hoping it would last, but',
-    image: 'https://via.placeholder.com/150'
+    name: '學影 ShareIn Taiwan',
+    title: ' ',
+    review: '擅長運用鏡頭特性並結合構圖與光線，將作品層次提升至卓越境界。',
+    image: new URL('./assets/reviews/sharein.webp', import.meta.url).href
   }
 ])
 
