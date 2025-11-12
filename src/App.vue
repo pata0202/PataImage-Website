@@ -1,6 +1,5 @@
 <template>
   <main>
-    <!-- <section id="top" class="h-20"></section> -->
     <section id="index" class="pt-20 flex flex-col justify-start items-center px-section md:px-sectionlg h-auto">
       <div class="text-6xl lg:text-8xl mb-10 font-medium text-center md:flex gap-5">
         <div class="pb-3 md:pb-0">Pata&nbsp;Image</div>
@@ -47,7 +46,7 @@
       <div class="px-section md:px-sectionlg text-xl mb-5 ">
         <div class="flex gap-10">
           <a class="transition duration-150 ease-in-out flex items-center gap-1 w-auto hover:border-b-amber-500 border-b-4 border-transparent"
-            href="https://google.com" target="_blank">
+            href="https://instagram.com/pata.image" target="_blank">
             <span>
               更多照片
             </span>
