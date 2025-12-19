@@ -13,7 +13,7 @@
         :class="[videoLoaded ? '' : 'bg-gray-200']">
         <video class="w-full h-full" autoplay loop muted playsinline @loadeddata="videoLoaded = true"
           :class="['transition-opacity duration-300', videoLoaded ? 'opacity-100' : 'opacity-0']">
-          <source :src="videoPath" type="video/mp4" />
+          <source :src="videoPath" type="video/webm" />
           瀏覽器不支援影片播放
         </video>
       </div>
