@@ -202,7 +202,7 @@ const reviews = ref([
 
 const pataImage = new URL('./assets/pata.webp', import.meta.url).href;
 const pataImage2 = new URL('./assets/pata2.webp', import.meta.url).href
-const videoPath = new URL('./assets/hero_vid.mp4', import.meta.url).href;
+const videoPath = "https://assets.pataimage.com/hero_vid.webm";
 
 const works = ref([
   {
